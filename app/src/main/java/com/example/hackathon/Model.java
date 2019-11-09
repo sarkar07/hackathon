@@ -5,11 +5,7 @@ public class Model {
     String name;
     public Model(){}
 
-    public Model(String mId, String mTitle) {
-        this.image = mId;
-        this.name = mTitle;
 
-    }
 
 
     public String getImage() {
