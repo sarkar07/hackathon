@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "576105937731",
+    "firebase_url": "https://fund-bc84f.firebaseio.com",
+    "project_id": "fund-bc84f",
+    "storage_bucket": "fund-bc84f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:576105937731:android:3e947668586cc8e70c8df6",
+        "android_client_info": {
+          "package_name": "com.example.hackathon"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "576105937731-1speudeqmscrv7qtp5clo4s3b5pnij4d.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hackathon",
+            "certificate_hash": "8bfa6c4dc0abfcd1709c8d179dc1d789b37d3c6d"
+          }
+        },
+        {
+          "client_id": "576105937731-svso2im71h97q6a5o14s7u1ot4g7louc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGOeSMT-eFMzv_PRIekMdSA4HJ8OrqeGA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "576105937731-svso2im71h97q6a5o14s7u1ot4g7louc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
