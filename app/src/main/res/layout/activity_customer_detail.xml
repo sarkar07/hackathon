@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".customer_detail">
+
+
+    <Button
+        android:id="@+id/detail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:text="Details" />
+
+    <TextView
+        android:id="@+id/goal"
+        android:layout_width="119dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/detail"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginBottom="-70dp"
+        android:ems="10"
+        android:inputType="text"
+        android:text="Goal :"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/amt_reached"
+        android:layout_width="119dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/goal"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="21dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginBottom="43dp"
+        android:inputType="text"
+        android:text="Amount reached :"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/goal_a"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/detail"
+        android:layout_marginLeft="37dp"
+        android:layout_marginBottom="-74dp"
+        android:layout_toRightOf="@id/goal"
+        android:ems="10"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/amt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/detail"
+        android:layout_marginLeft="34dp"
+        android:layout_marginBottom="-161dp"
+        android:layout_toRightOf="@id/goal"
+        android:ems="10"
+        android:inputType="number" />
+
+
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="360dp"
+        >
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:text="Category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="1"/>
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:text="Target"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+
+                android:layout_weigth="1"
+                android:text="Amount collected"
+                 />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:text="Food"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/m1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/m2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_weight="1"/>
+
+
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:text="Shelter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/m3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="1"
+                />
+            <TextView
+                android:id="@+id/m4"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_weight="1"/>
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+            <TextView
+                android:text="Clothes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/m5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_weight="1"/>
+            <TextView
+                android:id="@+id/m6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_weight="1"/>
+        </TableRow>
+
+
+
+
+
+    </TableLayout>
+    <Button
+        android:id="@+id/donate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="163dp"
+        android:layout_marginRight="163dp"
+        android:onClick="bill"
+        android:text="Donate" />
+
+
+</RelativeLayout>
