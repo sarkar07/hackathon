@@ -4,8 +4,11 @@ public class Model {
     String image;
     String name;
     public Model(){}
-
-
+   /* public Model(String image, String name) {
+        this.name = name;
+        this.image=image;
+    }
+*/
 
 
     public String getImage() {
