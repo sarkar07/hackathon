@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,6 +14,7 @@
     app:cardElevation="3dp"
     app:contentPadding="5dp"
     app:cardUseCompatPadding="true">
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -22,15 +29,19 @@
             android:textColor="#000"
             android:textSize="22dp"
             android:textStyle="bold"/>
+
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:id="@+id/img"
             android:scaleType="centerCrop"
             android:adjustViewBounds="true"
-            android:background="@drawable/load"/>
+            android:background="@drawable/load"
+            />
 
     </LinearLayout>
 
 
 </androidx.cardview.widget.CardView>
+</RelativeLayout>
+

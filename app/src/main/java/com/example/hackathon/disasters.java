@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +19,11 @@ import android.widget.TextView;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 public class disasters extends AppCompatActivity {
@@ -30,6 +33,8 @@ public class disasters extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference mref;
+    TextView tv;
+    ImageView img;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,12 +43,14 @@ public class disasters extends AppCompatActivity {
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Funds");
-        mrv = findViewById(R.id.rv);
+        //mrv = findViewById(R.id.rv);
 
         mrv.setLayoutManager(new LinearLayoutManager(this));
         mrv.setHasFixedSize(true);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        mref = firebaseDatabase.getReference("fund-bc84f");
+        mref = firebaseDatabase.getReference().child("disaster").child("bihar");
+        tv=(TextView)findViewById(R.id.yu);
+        //img = (ImageView)findViewById(R.id.img);
 
 
 
@@ -52,17 +59,26 @@ public class disasters extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        mref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                String name=dataSnapshot.child("name").getValue().toString();
+                tv.setText(name);
+                //Picasso.get().load(dataSnapshot.child("image").getValue().toString()).into(img);
 
-        FirebaseRecyclerAdapter<Model,ViewHolder> firebaseRecyclerAdapter=
-                new FirebaseRecyclerAdapter<Model, ViewHolder>(Model.class,R.layout.row,ViewHolder.class,mref) {
-                    @Override
-                    protected void populateViewHolder(ViewHolder viewHolder, Model model, int i) {
-                        viewHolder.setDetail(getApplicationContext(),model.getName(),model.getImage());
+                //Log.d(dataSnapshot.child("image").getValue().toString(),"iamge");
 
 
-                    }
-                };
-        mrv.setAdapter(firebaseRecyclerAdapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+
     }
 
 

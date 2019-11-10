@@ -4,17 +4,23 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.Random;
 
 public class customer_detail extends AppCompatActivity {
 private TextView goal;
@@ -25,6 +31,12 @@ private TextView amtrch;
     private TextView m4;
     private TextView m5;
     private TextView m6;
+    private  String gl, res, sg, fg,cg,fr,cr,sr;
+    Donation donation;
+    private int extras;
+    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private  FirebaseUser user= mAuth.getCurrentUser();
+
 
 DatabaseReference databaseReference;
     @Override
@@ -40,7 +52,8 @@ DatabaseReference databaseReference;
         m4=(TextView)findViewById(R.id.m4);
         m5=(TextView)findViewById(R.id.m5);
         m6=(TextView)findViewById(R.id.m6);
-        databaseReference= FirebaseDatabase.getInstance().getReference().child("bihar");
+        databaseReference= FirebaseDatabase.getInstance().getReference().child("disaster");
+
 
     }
 
@@ -50,14 +63,19 @@ DatabaseReference databaseReference;
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                String gl=dataSnapshot.child("goal").getValue().toString();
-                String res=dataSnapshot.child("reaches").getValue().toString();
-                String fg=dataSnapshot.child("foodper").getValue().toString();
-                String sg=dataSnapshot.child("shelterper").getValue().toString();
-                String cg=dataSnapshot.child("clothesper").getValue().toString();
-                String fr=dataSnapshot.child("food").child("reached").toString();
-                String cr=dataSnapshot.child("clothes").child("reached").getValue().toString();
-                String sr=dataSnapshot.child("shelter").child("reached").getValue().toString();
+                 gl=dataSnapshot.child("bihar").child("goal").getValue().toString();
+                 res=dataSnapshot.child("bihar").child("reached").getValue().toString();
+                 fg=dataSnapshot.child("bihar").child("foodper").getValue().toString();
+                 sg=dataSnapshot.child("bihar").child("shelterper").getValue().toString();
+                 cg=dataSnapshot.child("bihar").child("clothesper").getValue().toString();
+                 fr=dataSnapshot.child("bihar").child("food").child("reached").getValue().toString();
+                 cr=dataSnapshot.child("bihar").child("clothes").child("reached").getValue().toString();
+                 sr=dataSnapshot.child("bihar").child("shelter").child("reached").getValue().toString();
+                //databaseReference.child("bihar").child("extras").child("amount").setValue(200);
+
+               //donation.setId(user.getUid());
+                //databaseReference.child("bihar").child("extras").child("donor").push().setValue(donation);
+                // extras=Integer.parseInt(dataSnapshot.child("bihar").child("extras").child("amount").getValue().toString());
                 m1.setText(fg);
                 m2.setText(fr);
                 m3.setText(sg);
@@ -77,8 +95,15 @@ DatabaseReference databaseReference;
     }
 
     public void bill(View view)
+
     {
-       final AlertDialog.Builder alert=new AlertDialog.Builder(this);
+
+
+        Intent intent1 = new Intent(customer_detail.this, doante.class);
+
+
+        customer_detail.this.startActivity(intent1);
+       /*final AlertDialog.Builder alert=new AlertDialog.Builder(this);
        View mview=getLayoutInflater().inflate(R.layout.customer_bill,null);
         final EditText txt1 =(EditText) mview.findViewById(R.id.d1);
        final EditText txt2 =(EditText) mview.findViewById(R.id.d2);
@@ -103,17 +128,29 @@ DatabaseReference databaseReference;
             @Override
             public void onClick(View view) {
 
+
+                Toast.makeText(getApplicationContext(),"cc",Toast.LENGTH_LONG).show();
+
+
                 String n=txt1.getText().toString();
-                String m=txt2.getText().toString();
+                int m=Integer.parseInt(txt2.getText().toString());
+                Random rand = new Random();
+                //databaseReference.child("bihar").child("extras").child("amount").setValue(200);
+
+
+
+
+
 
 
 
             }
         });
 
-       alertDialog.show();
+       alertDialog.show();*/
 
 
     }
+
 
 }

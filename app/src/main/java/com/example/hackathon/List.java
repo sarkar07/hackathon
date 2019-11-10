@@ -19,7 +19,7 @@ public class List extends AppCompatActivity {
         donate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(List.this, disasters.class);
+                Intent intent1 = new Intent(List.this, customer_detail.class);
 
 
                 List.this.startActivity(intent1);
