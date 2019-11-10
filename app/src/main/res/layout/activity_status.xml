@@ -16,7 +16,8 @@
         app:layout_constraintHorizontal_bias="0.159"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.2" />
+        app:layout_constraintVertical_bias="0.2"
+        />
 
     <TextView
         android:id="@+id/textView5"
@@ -48,7 +49,7 @@
         android:layout_height="46dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:text="TextView"
+        android:text="No"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.814"
@@ -60,7 +61,7 @@
         android:id="@+id/sh"
         android:layout_width="166dp"
         android:layout_height="43dp"
-        android:text="TextView"
+        android:text="No"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.791"
@@ -72,7 +73,7 @@
         android:id="@+id/clt"
         android:layout_width="159dp"
         android:layout_height="60dp"
-        android:text="TextView"
+        android:text="No"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.769"

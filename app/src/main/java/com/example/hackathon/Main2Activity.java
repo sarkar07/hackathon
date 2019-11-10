@@ -75,7 +75,7 @@ private void login()
 
                 // Sign in success, update UI with the signed-in user's information
 
-                Intent intent1 = new Intent(Main2Activity.this,status.class);
+                Intent intent1 = new Intent(Main2Activity.this, next_main.class);
 
 
                 Main2Activity.this.startActivity(intent1);
@@ -98,8 +98,6 @@ private void login()
 
     });
 }
-
-
 
 
 }
